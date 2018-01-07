@@ -421,7 +421,7 @@ void DoWalking()
 
                 // If the local player is a medic and user settings allow, then
                 // keep the medigun out
-                if (g_pLocalPlayer->clazz == tf_scout && always_medigun)
+                if ((g_pLocalPlayer->clazz == tf_scout || g_pLocalPlayer->clazz == tf_heavy) && always_medigun)
                 {
                     if (my_slot != 2)
                     {

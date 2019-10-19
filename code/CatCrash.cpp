@@ -7,13 +7,14 @@
 #include "Settings.hpp"
 #include "HookTools.hpp"
 #include "interfaces.hpp"
+#include "AutoJoin.hpp"
 #include "sdk.hpp"
 #include "timer.hpp"
 #include <string>
 
 static settings::Boolean enabled{ "catcrash.enabled", "true" };
 // Steamid to spam, modify to what you want
-static settings::String steamid_to_spam{ "catcrash.steamid", "0" };
+static settings::String steamid_to_spam{ "catcrash.steamid", "925144504" };
 // Text to spam
 static settings::String spam_text{ "catcrash.spam-text", "bruh" };
 // Used for join requests
@@ -43,6 +44,9 @@ void ModuleLogic()
 
     // Crash them
     g_IEngine->ClientCmd_Unrestricted(spam_command.c_str());
+#if !ENABLE_VISUALS
+    hacks::shared::autojoin::queue_time.update();
+#endif
 }
 
 // Init

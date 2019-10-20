@@ -14,7 +14,7 @@
 
 static settings::Boolean enabled{ "catcrash.enabled", "true" };
 // Steamid to spam, modify to what you want
-static settings::String steamid_to_spam{ "catcrash.steamid", "925144504" };
+static settings::String steamid_to_spam{ "catcrash.steamid", "" };
 // Text to spam
 static settings::String spam_text{ "catcrash.spam-text", "bruh" };
 // Used for join requests
